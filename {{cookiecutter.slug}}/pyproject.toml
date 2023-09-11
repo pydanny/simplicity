@@ -5,7 +5,6 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "{{cookiecutter.slug}}"
 version = "{{cookiecutter.version}}"
-name = "{{cookiecutter.slug}}"
 description = "{{cookiecutter.project_short_description}}"
 readme = "README.md"
 authors = [
@@ -18,6 +17,17 @@ classifiers = [
 
 ]
 license = {text = "{{cookiecutter.license}}"}
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+    "black",  # code auto-formatting
+    "coverage",  # testing
+    "isort",  # code auto-formatting
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
 
 [project.urls]
 
@@ -27,3 +37,30 @@ homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+
+# Isort
+# -----
+
+[tool.isort]
+line_length = 99
+profile = "black"
+default_section = "THIRDPARTY"
+lines_after_imports = 2
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"

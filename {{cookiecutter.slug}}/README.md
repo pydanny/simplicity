@@ -9,6 +9,8 @@
 ## Installation
 
 ```bash
+python -m venv venv  # Create virtualenv
+source venv/bin/activate
 pip install {{cookiecutter.slug}}
 ```
 
@@ -18,16 +20,10 @@ TODO
 
 ## Development
 
-Install dev dependencies:
-
-```
-pip install -r requirements-dev.txt
-```
-
-Install the package in editable mode:
+Install the package in editable mode with test dependencies:
 
 ```bash
-pip install -e .
+pip install -e '.[test]'
 ```
 
 ### Code quality

@@ -1,4 +1,0 @@
-black
-coverage
-pytest
-ruff
