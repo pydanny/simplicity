@@ -1,0 +1,12 @@
+{
+  "full_name": "Daniel Roy Greenfeld",
+  "email": "daniel@example.com",
+  "github_username": "pydanny",
+  "project_name": "Python Boilerplate",
+  "slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.slug }}",
+  "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+  "pypi_username": "{{ cookiecutter.github_username }}",
+  "version": "0.1.0",
+  "license": ["MIT", "BSD", "ISC", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+}

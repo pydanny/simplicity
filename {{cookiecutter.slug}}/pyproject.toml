@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{cookiecutter.slug}}"
+version = "{{cookiecutter.version}}"
+name = "{{cookiecutter.slug}}"
+description = "{{cookiecutter.project_short_description}}"
+readme = "README.md"
+authors = [
+  {name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}
+]
+maintainers = [
+  {name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}
+]
+classifiers = [
+
+]
+license = {text = "{{cookiecutter.license}}"}
+
+[project.urls]
+
+bugs = "https://github.com/{{cookiecutter.__gh_slug}}/issues"
+changelog = "https://github.com/{{cookiecutter.__gh_slug}}/blob/master/CHANGELOG.md"
+homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
