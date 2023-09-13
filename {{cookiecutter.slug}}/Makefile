@@ -1,10 +1,9 @@
-changelog:  # Install gh cli and jq first
+changelog:  # Install gh cli
 	gh api \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  /repos/{{cookiecutter.__gh_slug}}/releases/latest > changelog.json
-	jq  -r '.tag_name' changelog.json
-	jq  -r '.body' changelog.json
+  /repos/{{cookiecutter.slug}}/releases/latest > changelog.json
+	python utils/update_changelog.py
 
 lint:
 	black .
