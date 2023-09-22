@@ -17,7 +17,10 @@ classifiers = [
 
 ]
 license = {text = "{{cookiecutter.license}}"}
-dependencies = []
+dependencies = [
+  {% if cookiecutter.command_line_interface.lower() == "yes" %}"typer"{% endif %}
+
+]
 
 [project.optional-dependencies]
 test = [

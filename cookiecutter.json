@@ -7,6 +7,7 @@
   "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.slug }}",
   "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
   "pypi_username": "{{ cookiecutter.github_username }}",
+  "command_line_interface": ["No", "Yes"],
   "version": "0.1.0",
   "license": ["MIT", "BSD", "ISC", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
 }

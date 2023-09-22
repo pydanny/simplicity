@@ -1,4 +1,4 @@
-# cookiecutter-pymodule 
+# Simplicity
 
 A cookiecutter template for building Python packages. Inspired by Audrey Roy Greenfeld's seminal work on [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) template.
 
@@ -6,9 +6,9 @@ A cookiecutter template for building Python packages. Inspired by Audrey Roy Gre
 
 - [x] Testing with GH actions
 - [x] Testing with pytest
-- [ ] Free software: BSD license
+- [ ] Choice of licenses: BSD
 - [ ] Optional shell entry point powered by Typer.
-- [ ] Better docs
+- [ ] Awesome docs
 
 ## Usage
 

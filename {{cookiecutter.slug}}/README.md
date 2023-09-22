@@ -62,4 +62,4 @@ pip install dist/*.whl --force-reinstall
 
 # Credits
 
-This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [cookiecutter-pymodule](https://github.com/pydanny/cookiecutter-pymodule) project template.
+This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [simplicity](https://github.com/pydanny/simplicity) project template.
