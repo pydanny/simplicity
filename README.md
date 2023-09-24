@@ -4,9 +4,8 @@ A cookiecutter template for building Python packages. Inspired by Audrey Roy Gre
 
 ## Features
 
-- [x] Testing with GH actions
-- [x] Testing with pytest
-- [ ] Choice of licenses: BSD
+- [ ] Testing with GH actions
+- [ ] Testing with pytest
 - [ ] Optional shell entry point powered by Typer.
 - [ ] Awesome docs
 
