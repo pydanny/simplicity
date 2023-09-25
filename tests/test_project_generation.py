@@ -1,11 +1,11 @@
 from cookiecutter.main import cookiecutter
 import pytest
-import os
+import shutil
 from pathlib import Path
 
 CURRENT_DIR = Path(__file__)
-REPO_DIR = CURRENT_DIR / ".."
-NEW_PROJECT_DIR = REPO_DIR / "python_boilerplate/"
+REPO_DIR = CURRENT_DIR.parent.parent
+NEW_PROJECT_DIR = REPO_DIR / "python_boilerplate"
 
 
 @pytest.fixture
@@ -27,7 +27,7 @@ def teardown_function(function):
     """teardown any state that was previously setup with a setup_function
     call.
     """
-    os.rmdir(NEW_PROJECT_DIR)
+    shutil.rmtree(NEW_PROJECT_DIR)
     
     
 def test_project_generation(context):
