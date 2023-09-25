@@ -19,10 +19,17 @@ print('\n'.join(output))
 endef
 export PRINT_HELP_PYSCRIPT # End of python section
 
+GH_CLI := $(shell command -v gh 2> /dev/null)
+
+ghcheck:  ## Check if GH CLI is installed
+ifndef GH_CLI
+	$(error "GitHub CLI (gh) not found on PATH. See https://cli.github.com/ to install.")
+endif
+
 help:  ## Print the help text
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-changelog:  ## Fetches the changelog from the release. Requires GH CLI and correct token access permissions
+changelog: ghcheck ## Fetches the changelog from the release. Requires GH CLI and correct token access permissions
 	gh api \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
