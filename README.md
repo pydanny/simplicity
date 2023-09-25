@@ -20,3 +20,7 @@ pip install cookiecutter
 
 TODO finish this section
 
+# Contributors
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
