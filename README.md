@@ -20,3 +20,10 @@ pip install cookiecutter
 
 TODO finish this section
 
+# Contributors
+
+<a href="https://github.com/pydanny/simplicity/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pydanny/simplicity" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
