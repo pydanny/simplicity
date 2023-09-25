@@ -1,0 +1,26 @@
+import pathlib
+import json
+
+
+def main():
+    changes: str = json.loads(pathlib.Path("changelog.json").read_text())
+    previous_changelog: str = pathlib.Path("CHANGELOG.md").read_text()
+
+    new_changelog: str = f"""
+# [{changes["tag_name"]}]({changes['html_url']})
+
+{changes['created_at']} by
+[@{changes['author']['login']}]({changes['author']['html_url']})
+
+## {changes["body"]}
+
+---
+
+{previous_changelog}
+"""
+
+    pathlib.Path("CHANGELOG.md").write_text(new_changelog)
+
+
+if __name__ == "__main__":
+    main()
