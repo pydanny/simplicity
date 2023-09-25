@@ -22,7 +22,7 @@ export PRINT_HELP_PYSCRIPT # End of python section
 help:  ## Print the help text
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-changelog:  ## Fetches the changelog from the release. Requires GH CLI
+changelog:  ## Fetches the changelog from the release. Requires GH CLI and correct token access permissions
 	gh api \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
