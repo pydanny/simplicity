@@ -16,63 +16,62 @@ Used to build simplicity!"""
 
 
 class Rst2Json(unittest.TestCase):
-    """ I test all facets of the Rst2Json function! Cool!"""
+    """I test all facets of the Rst2Json function! Cool!"""
 
     def setUp(self):
-        with open('tests/legacy/sample.rst') as f:
+        with open("tests/legacy/sample.rst") as f:
             text = simplicity.rst_to_json(f.read())
         self.data = json.loads(text)
-        with open('tests/legacy/sample2.rst') as f:
+        with open("tests/legacy/sample2.rst") as f:
             text = simplicity.rst_to_json(f.read())
         self.data2 = json.loads(text)
 
     def test_number_of_records(self):
-        """ I test that the right number of records are created! """
+        """I test that the right number of records are created!"""
         self.assertEqual(len(self.data), 3)
 
     def test_types(self):
-        """ I test that Simplicity makes a list and each element is a dictionary! """
+        """I test that Simplicity makes a list and each element is a dictionary!"""
         self.assertTrue(isinstance(self.data, list))
         self.assertTrue(isinstance(self.data[0], dict))
         self.assertTrue(isinstance(self.data[1], dict))
         self.assertTrue(isinstance(self.data[2], dict))
 
     def test_titles(self):
-        """ I test that each record has it's title element as it's dictionary title!"""
-        self.assertEqual(self.data[0]['title'], "Python")
-        self.assertEqual(self.data[1]['title'], "Java")
-        self.assertEqual(self.data[2]['title'], "GitHub")
+        """I test that each record has it's title element as it's dictionary title!"""
+        self.assertEqual(self.data[0]["title"], "Python")
+        self.assertEqual(self.data[1]["title"], "Java")
+        self.assertEqual(self.data[2]["title"], "GitHub")
 
     def test_integer(self):
-        """ I test integers by looking at the age of Python! """
-        self.assertTrue(isinstance(self.data[0]['age'], int))
+        """I test integers by looking at the age of Python!"""
+        self.assertTrue(isinstance(self.data[0]["age"], int))
 
     def test_float(self):
-        """ I test floats by looking at how much it costs to download Python! """
-        self.assertTrue(isinstance(self.data[0]['price'], float))
+        """I test floats by looking at how much it costs to download Python!"""
+        self.assertTrue(isinstance(self.data[0]["price"], float))
 
     def test_string(self):
-        """ I test strings by looking at Python's mascot! """
-        self.assertTrue(isinstance(self.data[0]['mascot'], STRING_TYPE))
+        """I test strings by looking at Python's mascot!"""
+        self.assertTrue(isinstance(self.data[0]["mascot"], STRING_TYPE))
 
     def test_multiline_string(self):
-        self.assertEquals(self.data[0]['description'], MULTILINE_STRING_TEST)
+        self.assertEquals(self.data[0]["description"], MULTILINE_STRING_TEST)
 
     def test_directives(self):
-        self.assertEquals(self.data2[0]['title'], u'My Title (Sample ReST document)')
+        self.assertEquals(self.data2[0]["title"], "My Title (Sample ReST document)")
 
 
 class FileOpener(unittest.TestCase):
-
     def test_basics(self):
-        """ I test that file_opener returns more than just itself!"""
+        """I test that file_opener returns more than just itself!"""
         text = simplicity.file_opener("tests/legacy/sample.rst")
         self.assertNotEqual(text, "tests/legacy/sample.rst")
         text = simplicity.file_opener("tests/legacy/README.rst")
         self.assertNotEqual(text, "tests/legacy/README.rst")
 
     def test_open(self):
-        """ I test that file_opener gets things correctly!"""
+        """I test that file_opener gets things correctly!"""
         with open("tests/legacy/sample.rst") as f:
             text = f.read()
         self.assertEqual(text, simplicity.file_opener("tests/legacy/sample.rst"))
@@ -86,5 +85,5 @@ class TypeConverter(unittest.TestCase):
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
