@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-__author__ = 'Daniel Greenfeld'
+__author__ = 'Daniel Roy Greenfeld'
 
 import json
 import string
