@@ -41,6 +41,11 @@ homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
 [tool.setuptools]
 package-dir = {"" = "src"}
 
+{% if cookiecutter.command_line_interface == 'Yes' %}
+[project.scripts]
+{{cookiecutter.__gh_slug}} = "{{cookiecutter.__gh_slug}}.cli:app"
+{% endif %}
+
 # Isort
 # -----
 

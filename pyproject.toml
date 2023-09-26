@@ -42,6 +42,9 @@ homepage = "https://github.com/pydanny/simplicity"
 [tool.setuptools]
 package-dir = {"" = "src"}
 
+[project.scripts]
+simplicity = "simplicity.cli:app"
+
 # Isort
 # -----
 

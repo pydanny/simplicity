@@ -6,8 +6,7 @@ A cookiecutter template for building Python packages. Inspired by Audrey Roy Gre
 
 - [x] Testing with GH actions
 - [x] Testing with pytest
-- [ ] Choice of licenses: BSD
-- [ ] Optional shell entry point powered by Typer.
+- [x] Optional shell entry point powered by Typer.
 - [ ] Awesome docs
 
 ## Usage
