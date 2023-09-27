@@ -8,8 +8,9 @@ def remove_cli():
 
 
 def main():
-    if "{{ cookiecutter.command_line_interface }}" == 'No':
+    if "{{ cookiecutter.command_line_interface }}" == "No":
         remove_cli()
+
 
 if __name__ == "__main__":
     main()
