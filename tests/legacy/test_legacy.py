@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import json
-import sys
+import warnings
 import unittest
 
 import simplicity
@@ -61,6 +61,12 @@ class Rst2Json(unittest.TestCase):
     def test_directives(self):
         self.assertEquals(self.data2[0]["title"], "My Title (Sample ReST document)")
 
+    def test_deprecation(self):
+        with warnings.catch_warnings(record=True) as w:
+            with open("tests/legacy/sample.rst") as f:
+                simplicity.rst_to_json(f.read())
+            assert len(w) == 1
+
 
 class FileOpener(unittest.TestCase):
     def test_basics(self):
@@ -76,13 +82,6 @@ class FileOpener(unittest.TestCase):
             text = f.read()
         self.assertEqual(text, simplicity.file_opener("tests/legacy/sample.rst"))
 
-
-class TextCleanup(unittest.TestCase):
-    pass
-
-
-class TypeConverter(unittest.TestCase):
-    pass
 
 
 if __name__ == "__main__":
