@@ -6,6 +6,7 @@ __author__ = "Daniel Roy Greenfeld"
 import json
 import string
 import sys
+import warnings
 
 # Python 3 compatibility
 STRING_TYPE = str
@@ -27,10 +28,10 @@ def text_cleanup(data, key, last_type):
 
 
 def rst_to_json(text):
-    """I convert Restructured Text with field lists into Dictionaries!
-
-    TODO: Convert to text node approach.
-    """
+    """I convert Restructured Text with field lists into Dictionaries!"""
+    warnings.warn(
+        "simplicity.rst_2_json is deprecated.", DeprecationWarning, stacklevel=2
+    )
     records = []
     last_type = None
     key = None

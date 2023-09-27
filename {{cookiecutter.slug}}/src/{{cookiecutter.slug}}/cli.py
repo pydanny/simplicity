@@ -11,7 +11,7 @@ def hello():
 
 @app.command()
 def todo():
-    print('[bold red]TODO[/bold red]: Add another command here')
+    print("[bold red]TODO[/bold red]: Add another command here")
 
 
 if __name__ == "__main__":

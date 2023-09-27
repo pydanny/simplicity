@@ -18,6 +18,7 @@ def create():
 def update():
     print("[bold red]TODO[/bold red]: Updating your package")
 
+
 @app.command()
 def rst_to_json(path: pathlib.Path):
     """Convert ReStructuredText to JSON"""
