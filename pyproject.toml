@@ -16,9 +16,11 @@ maintainers = [
 classifiers = [
 
 ]
-license = {text = "BSD"}
+license = {text = "MIT"}
 dependencies = [
-  "cookiecutter"
+  "rich",
+  "typer"
+
 ]
 
 [project.optional-dependencies]
@@ -36,6 +38,12 @@ test = [
 bugs = "https://github.com/pydanny/simplicity/issues"
 changelog = "https://github.com/pydanny/simplicity/blob/master/CHANGELOG.md"
 homepage = "https://github.com/pydanny/simplicity"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[project.scripts]
+simplicity = "simplicity.cli:app"
 
 # Isort
 # -----
@@ -63,3 +71,6 @@ warn_no_return = true
 module = "tests.*"
 allow_untyped_defs = true
 disable_error_code = "attr-defined"
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
