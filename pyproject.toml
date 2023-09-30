@@ -18,6 +18,7 @@ classifiers = [
 ]
 license = {text = "MIT"}
 dependencies = [
+  "cookiecutter",
   "rich",
   "typer"
 
