@@ -1,0 +1,24 @@
+on:
+    pull_request:
+  
+jobs:
+    version_matrix:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, windows-latest]
+          python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+      runs-on: ${{ matrix.os }}
+      name: Running the test suite for Python ${{ matrix.python-version }} version on ${{ matrix.os }}
+      steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      
+      - name: Run tests
+        run: |
+            python -m pip install --upgrade pip
+            pip install -e '.[test]'
+            pytest . --ignore={{cookiecutter.slug}}
