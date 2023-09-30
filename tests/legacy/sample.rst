@@ -10,7 +10,7 @@ Python
 
 My favorite programming language. This line is ignored by simplicity.
 
-Java 
+Java
 ----
 :age: 18
 :typing: static, strong

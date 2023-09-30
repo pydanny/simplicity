@@ -1,0 +1,103 @@
+default_language_version:
+  python: python3
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-merge-conflict
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: check-case-conflict
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: check-symlinks
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: end-of-file-fixer
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: trailing-whitespace
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: check-ast
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+      - id: debug-statements
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: check-json
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: pretty-format-json
+        args:
+          - --autofix
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: check-yaml
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+      - id: detect-private-key
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        types:
+          - file
+          - python
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.291
+    hooks:
+      - id: ruff
+        exclude: >
+          (?x)(
+            ^{{cookiecutter.slug}}/
+          )

@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import json
-import warnings
 import unittest
+import warnings
 
 import simplicity
+
 
 # Python 3 compatibility
 STRING_TYPE = str
@@ -81,7 +82,6 @@ class FileOpener(unittest.TestCase):
         with open("tests/legacy/sample.rst") as f:
             text = f.read()
         self.assertEqual(text, simplicity.file_opener("tests/legacy/sample.rst"))
-
 
 
 if __name__ == "__main__":

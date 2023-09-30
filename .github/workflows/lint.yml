@@ -1,0 +1,33 @@
+name: Pre-commit linter
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the current repo
+        uses: actions/checkout@v3
+
+      - name: Cache pre-commit and Python virtual environment
+        id: pre-commit-cache-restore
+        uses: actions/cache@v3
+        with:
+          path: |
+            .git/hooks/pre-commit
+            py3_yagro_venv
+          key: ${{ runner.os }}-lint-${{ hashFiles('**/.pre-commit-config.yaml') }}
+
+      - name: Install pre-commit and all of the necessary hooks
+        run: |
+          python -m venv py3_yagro_venv
+          source py3_yagro_venv/bin/activate
+
+          pip install pre-commit
+          pre-commit install --install-hooks
+
+      - name: Run pre-commit hooks
+        run: |
+          source py3_yagro_venv/bin/activate
+          pre-commit run --show-diff-on-failure --all-files

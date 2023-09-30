@@ -8,6 +8,7 @@ import string
 import sys
 import warnings
 
+
 # Python 3 compatibility
 STRING_TYPE = str
 DIVIDERS = ["~", "=", "-", "+", "_"]
@@ -40,7 +41,6 @@ def rst_to_json(text):
 
     lines = text.splitlines()
     for index, line in enumerate(lines):
-
         # check for directives
         if len(line) and line.strip().startswith(".."):
             directive = True
@@ -70,7 +70,7 @@ def rst_to_json(text):
             continue
 
         # Work on multi-line strings
-        if len(line) and line[0].startswith(" ") and directive == False:
+        if len(line) and line[0].startswith(" ") and directive is False:
             if not isinstance(data[key], str):
                 # Not a string so continue on
                 continue
