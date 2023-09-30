@@ -2,10 +2,27 @@ from cookiecutter.main import cookiecutter
 import pytest
 import shutil
 from pathlib import Path
+import os
+import sys
+import subprocess
 
-CURRENT_DIR = Path(__file__)
-REPO_DIR = CURRENT_DIR.parent.parent
+
+BASE_DIR = Path(__file__).parent
+REPO_DIR = BASE_DIR.parent
 NEW_PROJECT_DIR = REPO_DIR / "python_boilerplate"
+
+IMPORTANT_FILES = [
+    "pyproject.toml",
+    "Makefile",
+    "README.md",
+    "CODE_OF_CONDUCT.md",
+    "CHANGELOG.md",
+    "utils/update_changelog.py",
+    "tests/__init__.py",
+    "tests/test_python_boilerplate.py",
+    ".github/workflows/python-ci.yml",
+    ".github/workflows/python-publish.yml",
+]
 
 
 @pytest.fixture
@@ -21,19 +38,35 @@ def context():
         "version": "0.1.0",
         "license": "MIT",
     }
-    
 
-def teardown_function(function):
-    """teardown any state that was previously setup with a setup_function
-    call.
-    """
+
+@pytest.fixture
+def generated_project(context):
+    cookiecutter(".", no_input=True, extra_context=context)
+    yield
     shutil.rmtree(NEW_PROJECT_DIR)
-    
-    
-def test_project_generation(context):
-    """Test that project is generated and fully rendered."""
 
-    cookiecutter(
-        ".", no_input=True, extra_context=context
-    )
-    
+
+@pytest.mark.usefixtures("generated_project")
+def test_project_generation():
+    assert NEW_PROJECT_DIR.exists()
+
+
+@pytest.mark.usefixtures("generated_project")
+@pytest.mark.parametrize("important_file", IMPORTANT_FILES)
+def test_all_files_generated(important_file):
+    assert (NEW_PROJECT_DIR / important_file).exists()
+
+
+@pytest.mark.usefixtures("generated_project")
+def test_no_placeholders_left():
+    for foldername, _, filenames in os.walk(NEW_PROJECT_DIR):
+        for filename in filenames:
+            filepath = Path(foldername) / filename
+            with open(filepath, "r") as file:
+                content = file.read()
+                assert "{{cookiecutter" not in content
+                
+
+def test_makefile_works():
+    subprocess.run(["make"], check=True, cwd=REPO_DIR)
