@@ -63,3 +63,10 @@ pip install dist/*.whl --force-reinstall
 # Credits
 
 This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [simplicity](https://github.com/pydanny/simplicity) project template.
+
+# Contributors
+
+TODO add `REPO_UPDATE_TOKENa` to https://github.com/{{cookiecutter.__gh_slug}}/settings/secrets/actions per instructions at https://github.com/marketplace/actions/contribute-list
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
