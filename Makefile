@@ -50,6 +50,7 @@ tag:  ## Tag the project for release
 
 
 test:  ## Run the tests
+	rm -rf python_boilerplate
 	coverage run -m pytest . --ignore=\{\{cookiecutter.slug\}\}
 	coverage report -m
 	coverage html
