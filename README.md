@@ -32,6 +32,13 @@ TODO finish this section
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/JanAdamiak">
+            <img src="https://avatars.githubusercontent.com/u/45169660?v=4" width="100;" alt="JanAdamiak"/>
+            <br />
+            <sub><b>Jan Adamiak</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/iwootten">
             <img src="https://avatars.githubusercontent.com/u/3598161?v=4" width="100;" alt="iwootten"/>
             <br />
