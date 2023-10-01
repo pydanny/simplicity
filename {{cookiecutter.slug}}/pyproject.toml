@@ -18,8 +18,9 @@ classifiers = [
 ]
 license = {text = "{{cookiecutter.license}}"}
 dependencies = [
-  {% if cookiecutter.command_line_interface.lower() == "yes" %}"typer"{% endif %}
-
+  {% if cookiecutter.command_line_interface.lower() == "yes" -%}"rich",
+  "typer"
+{%- endif %}
 ]
 
 [project.optional-dependencies]
@@ -43,7 +44,7 @@ package-dir = {"" = "src"}
 
 {% if cookiecutter.command_line_interface == 'Yes' %}
 [project.scripts]
-{{cookiecutter.__gh_slug}} = "{{cookiecutter.__gh_slug}}.cli:app"
+{{cookiecutter.slug}} = "{{cookiecutter.slug}}.cli:app"
 {% endif %}
 
 # Isort
