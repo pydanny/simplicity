@@ -1,10 +1,11 @@
 import pathlib
 
+import typer
 from cookiecutter import main
 from rich import print
-import typer
 
 from .legacy import rst_to_json as legacy_rst_to_json
+
 
 app = typer.Typer()
 

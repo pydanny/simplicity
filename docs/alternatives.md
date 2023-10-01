@@ -2,7 +2,7 @@
 
 What inspired **Simplicity**, how it compares to other alternatives and what it learned from them.
 
-## Intro 
+## Intro
 
 **Simplicity** wouldn't exist if not for the previous work of others.
 
@@ -16,11 +16,11 @@ This is the progenitor of Python package templates, designed to work for everyon
 
 ### cookiecutter-django
 
-I started this project with the intention of building a tool that works for everyone. It taught me to not accept PRs or work from people bringing in new tech I don't understand without a history with me of maintaining their efforts. 
+I started this project with the intention of building a tool that works for everyone. It taught me to not accept PRs or work from people bringing in new tech I don't understand without a history with me of maintaining their efforts.
 
 ### Pipenv
 
-The lesson of pipenv (and some other tools) is that pip, venv, and other "standard" tools are good foundations to build on. 
+The lesson of pipenv (and some other tools) is that pip, venv, and other "standard" tools are good foundations to build on.
 
 ### Poetry
 

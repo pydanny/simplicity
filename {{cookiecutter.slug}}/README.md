@@ -28,7 +28,7 @@ pip install -e '.[test]'
 
 ### Code quality
 
-```bash 
+```bash
 make lint
 ```
 

@@ -2,9 +2,9 @@
 simplicity
 ==========
 
-Converts ReStructuredText into JSON. 
+Converts ReStructuredText into JSON.
 
-* **Sections** are JSON list dictionary elements 
+* **Sections** are JSON list dictionary elements
 * **Section Headers**  become list titles.
 * **Field** definitions become key/value representations.
 * **Directives** are ignored.
@@ -20,12 +20,12 @@ Input
     ------
     :age: 22
     :typing: dynamic, strong
-    
-    Java 
+
+    Java
     ----
     :age: 18
     :typing: static, strong
-    
+
 Output
 
 .. code-block:: JavaScript
@@ -34,7 +34,7 @@ Output
         {"title": "Python", "age": 22, "typing": "dynamic, strong"}
         {"title": "Java", "age": 18, "typing": "static, strong"}
     ]
-    
+
 Usage
 ------
 
@@ -45,7 +45,7 @@ Usage
     $ python simplicity.py sample.rst
     [
         {
-            "description": "A fun programming language.\n\nUsed to build simplicity!",    
+            "description": "A fun programming language.\n\nUsed to build simplicity!",
             "title": "Python",
             "price": 0.0,
             "typing": "dynamic, strong",

@@ -1,5 +1,6 @@
-from rich import print
 import typer
+from rich import print
+
 
 app = typer.Typer()
 
