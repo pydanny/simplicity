@@ -40,6 +40,8 @@ def rst_to_json(text):
 
     lines = text.splitlines()
     for index, line in enumerate(lines):
+        if not line.strip():
+            line = ""
 
         # check for directives
         if len(line) and line.strip().startswith(".."):
