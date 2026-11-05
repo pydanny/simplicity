@@ -33,7 +33,7 @@ changelog: ghcheck ## Fetches the changelog from the release. Requires GH CLI an
 	gh api \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  /repos/simplicity/releases/latest > changelog.json
+  /repos/pydanny/simplicity/releases/latest > changelog.json
 	python utils/update_changelog.py
 	rm changelog.json
 
