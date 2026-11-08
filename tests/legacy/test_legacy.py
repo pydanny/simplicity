@@ -56,10 +56,10 @@ class Rst2Json(unittest.TestCase):
         self.assertTrue(isinstance(self.data[0]["mascot"], STRING_TYPE))
 
     def test_multiline_string(self):
-        self.assertEquals(self.data[0]["description"], MULTILINE_STRING_TEST)
+        self.assertEqual(self.data[0]["description"], MULTILINE_STRING_TEST)
 
     def test_directives(self):
-        self.assertEquals(self.data2[0]["title"], "My Title (Sample ReST document)")
+        self.assertEqual(self.data2[0]["title"], "My Title (Sample ReST document)")
 
     def test_deprecation(self):
         with warnings.catch_warnings(record=True) as w:
