@@ -91,3 +91,18 @@ def test_cli_is_generated(context):
     cookiecutter(".", no_input=True, extra_context=context)
     assert (NEW_PROJECT_DIR / "src/python_boilerplate/cli.py").exists()
     shutil.rmtree(NEW_PROJECT_DIR)
+
+
+@pytest.mark.parametrize("command_line_interface", ["Yes", "No"])
+def test_contributors_workflow_preserves_github_token(context, tmp_path, command_line_interface):
+    """Keep GitHub expressions literal while rendering either project variant."""
+    cookiecutter(
+        str(REPO_DIR),
+        no_input=True,
+        extra_context={**context, "command_line_interface": command_line_interface},
+        output_dir=str(tmp_path),
+    )
+    workflow = (tmp_path / context["slug"] / ".github/workflows/contributors.yml").read_text()
+    assert "GITHUB_TOKEN: ${{ secrets.REPO_UPDATE_TOKEN }}" in workflow
+    assert "{% raw %}" not in workflow
+    assert "{% endraw %}" not in workflow
