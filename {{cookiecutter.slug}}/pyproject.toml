@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "{{cookiecutter.slug}}"
 version = "{{cookiecutter.version}}"
-description = "{{cookiecutter.project_short_description}}"
+description = "{{ cookiecutter.project_short_description | replace('\\', '\\\\') | replace('"', '\\"') }}"
 readme = "README.md"
 authors = [
   {name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}

@@ -30,7 +30,8 @@ test = [
     "isort",  # code auto-formatting
     "mypy",  # linting
     "pytest",  # testing
-    "ruff"  # linting
+    "ruff",  # linting
+    "setuptools>=61.0"  # generated package metadata
 ]
 
 [project.urls]
