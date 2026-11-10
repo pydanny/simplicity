@@ -1,5 +1,5 @@
-__author__ = "{{ cookiecutter.full_name }}"
-__email__ = "{{ cookiecutter.email }}"
+__author__ = "{{ cookiecutter.full_name | replace('\\', '\\\\') | replace('"', '\\"') }}"
+__email__ = "{{ cookiecutter.email | replace('\\', '\\\\') | replace('"', '\\"') }}"
 
 
 def main():
